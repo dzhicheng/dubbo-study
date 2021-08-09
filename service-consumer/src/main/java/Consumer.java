@@ -10,7 +10,7 @@ public class Consumer {
 
     public static void main(String[] args) throws Exception {
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:dubbo-consumer.xml");
-        context.start();
+//        context.start();
         // 获取远程服务代理
         HelloService helloService = (HelloService)context.getBean("helloService");
         // 执行远程方法

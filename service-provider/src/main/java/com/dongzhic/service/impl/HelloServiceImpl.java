@@ -3,6 +3,8 @@ package com.dongzhic.service.impl;
 import com.dongzhic.service.HelloService;
 import org.apache.dubbo.config.annotation.Service;
 
+import java.util.concurrent.TimeUnit;
+
 /**
  * 注入spring容器
  * @Author dongzhic
@@ -12,7 +14,11 @@ import org.apache.dubbo.config.annotation.Service;
 public class HelloServiceImpl implements HelloService {
     @Override
     public String sayHello(String name) {
-        System.out.println("生产者sayHello");
+//        try {
+//            TimeUnit.SECONDS.sleep(3);
+//        } catch (InterruptedException e) {
+//            e.printStackTrace();
+//        }
         return "hello:" + name;
     }
 }
