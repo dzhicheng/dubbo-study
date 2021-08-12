@@ -12,11 +12,13 @@
         <module>service-api</module>
         <module>service-provider</module>
         <module>service-consumer</module>
-        <module>service-app</module>
+        <module>service-client</module>
     </modules>
 
     <properties>
         <dubbo.version>2.7.5</dubbo.version>
+        <dubbo.alibab.version>2.6.5</dubbo.alibab.version>
+        <spring.version>5.1.3.RELEASE</spring.version>
     </properties>
 
     <!--依赖管理，用于管理dubbo的依赖-->
@@ -57,10 +59,31 @@
                 <artifactId>dubbo-serialization-hessian2</artifactId>
                 <version>${dubbo.version}</version>
             </dependency>
+
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-rpc-dubbo</artifactId>
+                <version>${dubbo.alibab.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-remoting-netty</artifactId>
+                <version>${dubbo.alibab.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>dubbo-serialization-hessian2</artifactId>
+                <version>${dubbo.alibab.version}</version>
+            </dependency>
         </dependencies>
     </dependencyManagement>
 
     <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+        </dependency>
         <!-- 日志配置 -->
         <dependency>
             <groupId>log4j</groupId>
@@ -89,13 +112,6 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.20</version>
-        </dependency>
-
-        <!-- https://mvnrepository.com/artifact/com.alibaba/fastjson -->
-        <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.78</version>
         </dependency>
 
     </dependencies>

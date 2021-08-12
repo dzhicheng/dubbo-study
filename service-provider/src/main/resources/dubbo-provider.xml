@@ -21,4 +21,13 @@
 
     <!-- 让spring托管和实例化，和本地bean一样实现服务 -->
     <bean id="helloService" class="com.dongzhic.service.impl.HelloServiceImpl" />
+    <bean id="payService" class="com.dongzhic.service.impl.PayServiceImpl" />
+    <bean id="userService" class="com.dongzhic.service.impl.UserServiceImpl" />
+    <bean id="errorService" class="com.dongzhic.service.impl.ErrorServiceImpl" />
+
+    <!-- 声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.dongzhic.service.PayService" ref="payService" />
+    <dubbo:service interface="com.dongzhic.service.UserService" ref="userService" />
+    <dubbo:service interface="com.dongzhic.service.ErrorService" ref="errorService" />
+
 </beans>

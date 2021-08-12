@@ -1,7 +1,7 @@
 package com.dongzhic.utils;
 
 import com.alibaba.fastjson.JSON;
-import com.dongzhic.entity.OrderEntiry;
+import com.dongzhic.entity.OrderEntry;
 import com.dongzhic.service.InfoService;
 import com.dongzhic.service.OrderService;
 
@@ -49,7 +49,7 @@ public class RmiClient {
         OrderService service = new OrderService(){
 
             @Override
-            public OrderEntiry getDetail(String id) {
+            public OrderEntry getDetail(String id) {
                 Map<String,String> info = new HashMap();
                 //写死了反射的目标，静态代理
                 //对象
@@ -59,9 +59,9 @@ public class RmiClient {
                 //参数
                 info.put("arg",id);
 
-                OrderEntiry result = null;
+                OrderEntry result = null;
                 try {
-                    result = (OrderEntiry)infoService.passInfo(info);
+                    result = (OrderEntry)infoService.passInfo(info);
                 } catch (RemoteException e) {
                     e.printStackTrace();
                 }

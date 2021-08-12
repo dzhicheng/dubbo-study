@@ -20,11 +20,48 @@
 
     <!--不需要配置协议，消费方是被动接受协议-->
 
-<!--    <dubbo:consumer timeout="4000" />-->
+    <!--
+        check   启动检查，true：检测到某接口没有提供者时，抛异常，阻止系统启动，可能会出现循环依赖导致报错
+        cluster 集群容错配置
+        loadbalance  负载均衡配置
+            Random      按权重随机, 根据weight值（服务方设置）来随机
+            RoundRobin  轮询
+            LeastActive 最少活跃数
+    -->
+    <dubbo:consumer check="false" cluster="failover" retries="2" forks="2" loadbalance="random" />
 
     <!-- 使用zookeeper广播注册中心暴露发现服务地址 -->
     <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 
-    <!-- 生成远程服务代理，可以和本地bean一样使用demoService -->
-    <dubbo:reference id="helloService" interface="com.dongzhic.service.HelloService" timeout="4000" />
+    <!-- 生成远程服务代理，可以和本地bean一样使用demoService
+         cache  声明式缓存
+            lru ：基于最近最少使用原则删除多余缓存
+            threadlocal ：当前线程缓存
+    -->
+    <dubbo:reference id="helloService" interface="com.dongzhic.service.HelloService" cache="lru" timeout="4000" />
+
+    <!--启动时不检查-->
+    <!--<dubbo:reference id="orderService" interface="com.enjoy.service.OrderService"-->
+    <!--loadbalance="roundrobin" timeout="1000" version="1.0"/>-->
+    <dubbo:reference id="orderService2" interface="com.dongzhic.service.OrderService" />
+    <!--check="false" -->
+    <!--retries="2" cluster="failover"-->
+    <!--loadbalance="roundrobin"-->
+    <!--cache="lru"-->
+    <!--group="group2"-->
+    <!--version="1.0"-->
+
+    <!--异步调用-->
+    <dubbo:reference  id="userService" interface="com.dongzhic.service.UserService" >
+        <dubbo:method name="getDetail" async="true" />
+    </dubbo:reference>
+    <dubbo:reference  id="payService" interface="com.dongzhic.service.PayService" >
+        <dubbo:method name="pay" async="true" />
+    </dubbo:reference>
+
+    <!--回调-->
+    <dubbo:reference  id="errorService" interface="com.dongzhic.service.ErrorService" >
+        <dubbo:method name="doSomeThing"
+                      onreturn="callBack.onSuccess" onthrow="callBack.onError"/>
+    </dubbo:reference>
 </beans>
