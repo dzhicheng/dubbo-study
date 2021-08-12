@@ -24,7 +24,7 @@ public class RmiClient {
             Object ret = infoService.sayHello("james");
             System.out.println("测试远程调用功能infoService.sayHello，调用结果：" + JSON.toJSONString(ret));
 
-            //呼叫远程反射方法
+            // 方式一：呼叫远程反射方法
             Map<String,String> info = new HashMap();
             info.put("target","orderService");
             info.put("methodName","getDetail");
@@ -32,7 +32,7 @@ public class RmiClient {
             Object result = infoService.passInfo(info);
             System.out.println("测试远程调用功能，调用结果：" + JSON.toJSONString(result));
 
-            // 静态代理方法
+            // 方式二：静态代理方法
             OrderService service = getService(infoService);
             // 透明化调用，不增加开发人员的负担
             Object result2 = service.getDetail("1");
