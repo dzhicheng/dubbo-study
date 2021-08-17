@@ -1,0 +1,10 @@
+com/dongzhic/AnnotationConsumerMain$ConsumerConfiguration.class
+com/dongzhic/utils/RmiClient$1.class
+com/dongzhic/service/HelloServiceMock.class
+com/dongzhic/service/CallBack.class
+com/dongzhic/utils/RmiClient.class
+com/dongzhic/AnnotationConsumerMain.class
+com/dongzhic/bean/ConsumerComponent.class
+com/dongzhic/controller/IndexController.class
+ConsumerTest.class
+ConsumerTest$ConsumerConfiguration.class

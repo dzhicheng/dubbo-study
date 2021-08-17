@@ -1,0 +1,10 @@
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/config/Consumer.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/service/OrderServiceImpl.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/xml/XmlServer.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/config/Provider.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/api/Server.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/annotation/Consumer.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/action/ServiceConsumer.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/xml/XmlClient.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/annotation/Provider.java
+/Users/zhicheng/workspace/study/dubbo-study/service-client/src/main/java/com/dongzhic/dubbo/api/Client.java

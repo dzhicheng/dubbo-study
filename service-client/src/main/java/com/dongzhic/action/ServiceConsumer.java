@@ -19,9 +19,9 @@
 
 package com.dongzhic.action;
 
-import com.alibaba.dubbo.config.annotation.Reference;
 import com.dongzhic.entity.OrderEntry;
 import com.dongzhic.service.OrderService;
+import org.apache.dubbo.config.annotation.Reference;
 import org.springframework.stereotype.Component;
 
 @Component("annotatedConsumer")

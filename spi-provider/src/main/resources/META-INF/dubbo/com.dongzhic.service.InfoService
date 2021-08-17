@@ -1,0 +1,3 @@
+a=com.dongzhic.service.impl.info.InfoServiceAImpl
+b=com.dongzhic.service.impl.info.InfoServiceBImpl
+c=com.dongzhic.service.impl.info.InfoServiceCImpl

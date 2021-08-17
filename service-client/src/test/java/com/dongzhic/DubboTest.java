@@ -1,7 +1,7 @@
 package com.dongzhic;
 
-import com.alibaba.dubbo.rpc.service.EchoService;
-import com.alibaba.dubbo.rpc.service.GenericService;
+import org.apache.dubbo.rpc.service.EchoService;
+import org.apache.dubbo.rpc.service.GenericService;
 import org.junit.Test;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 

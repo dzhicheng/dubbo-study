@@ -1,0 +1,14 @@
+com/dongzhic/dubbo/xml/XmlClient.class
+com/dongzhic/dubbo/annotation/Consumer.class
+com/dongzhic/dubbo/api/Client.class
+com/dongzhic/service/OrderServiceImpl.class
+com/dongzhic/dubbo/config/Provider.class
+com/dongzhic/dubbo/config/Provider$ProviderConfiguration.class
+com/dongzhic/dubbo/xml/XmlServer.class
+com/dongzhic/dubbo/config/Consumer.class
+com/dongzhic/dubbo/api/Server.class
+com/dongzhic/dubbo/annotation/Consumer$ConsumerConfiguration.class
+com/dongzhic/dubbo/config/Consumer$ConsumerConfiguration.class
+com/dongzhic/dubbo/annotation/Provider$ProviderConfiguration.class
+com/dongzhic/dubbo/annotation/Provider.class
+com/dongzhic/action/ServiceConsumer.class

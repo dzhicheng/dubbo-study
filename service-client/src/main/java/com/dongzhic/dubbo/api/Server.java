@@ -17,11 +17,11 @@
 
 package com.dongzhic.dubbo.api;
 
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
-import com.alibaba.dubbo.config.ServiceConfig;
 import com.dongzhic.service.OrderService;
 import com.dongzhic.service.OrderServiceImpl;
+import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.RegistryConfig;
+import org.apache.dubbo.config.ServiceConfig;
 
 import java.io.IOException;
 

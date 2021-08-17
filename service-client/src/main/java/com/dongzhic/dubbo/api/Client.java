@@ -17,11 +17,11 @@
 
 package com.dongzhic.dubbo.api;
 
-import com.alibaba.dubbo.config.ApplicationConfig;
-import com.alibaba.dubbo.config.ReferenceConfig;
-import com.alibaba.dubbo.config.RegistryConfig;
 import com.dongzhic.entity.OrderEntry;
 import com.dongzhic.service.OrderService;
+import org.apache.dubbo.config.ApplicationConfig;
+import org.apache.dubbo.config.ReferenceConfig;
+import org.apache.dubbo.config.RegistryConfig;
 
 public class Client {
     public static void main(String[] args) {

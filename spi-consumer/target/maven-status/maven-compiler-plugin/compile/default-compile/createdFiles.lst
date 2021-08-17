@@ -1,0 +1,12 @@
+com/dongzhic/protocol/SimpleInvoker.class
+com/dongzhic/test/SpiTest.class
+com/dongzhic/test/BeanSpringSpiTest.class
+com/dongzhic/test/AdaptiveTest.class
+com/dongzhic/test/BeanSpringSpiTest$ProviderConfiguration.class
+com/dongzhic/test/BeanSpringSpiTest$ProviderConfiguration$1.class
+com/dongzhic/protocol/RmiProtocol$1.class
+com/dongzhic/protocol/RmiProtocol.class
+com/dongzhic/test/RpcSPITest.class
+com/dongzhic/test/RpcProtocolTest.class
+com/dongzhic/App.class
+com/dongzhic/test/ActivateTest.class

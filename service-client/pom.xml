@@ -22,32 +22,26 @@
 
     <!--dubbo依赖-->
     <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo-config-spring</artifactId>
-      <version>${dubbo.alibab.version}</version>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo</artifactId>
     </dependency>
-    <!-- zookeeper注册中心 -->
     <dependency>
-      <groupId>com.alibaba</groupId>
+      <groupId>org.apache.dubbo</groupId>
       <artifactId>dubbo-registry-zookeeper</artifactId>
-      <version>${dubbo.alibab.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-rpc-dubbo</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-remoting-netty4</artifactId>
+    </dependency>
+    <dependency>
+      <groupId>org.apache.dubbo</groupId>
+      <artifactId>dubbo-serialization-hessian2</artifactId>
     </dependency>
 
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo-rpc-dubbo</artifactId>
-      <version>${dubbo.alibab.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo-remoting-netty</artifactId>
-      <version>${dubbo.alibab.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.alibaba</groupId>
-      <artifactId>dubbo-serialization-hessian2</artifactId>
-      <version>${dubbo.alibab.version}</version>
-    </dependency>
   </dependencies>
 
 </project>
