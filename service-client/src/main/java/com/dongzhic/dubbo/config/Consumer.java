@@ -40,7 +40,7 @@ public class Consumer {
 
     @Configuration
     @EnableDubbo(scanBasePackages = "com.dongzhic.action")
-    @PropertySource("classpath:/dubbo-consumer.properties")
+    @PropertySource("classpath:/dubbo/dubbo-consumer.properties")
     @ComponentScan(value = {"com.dongzhic.action"})
     static class ConsumerConfiguration {
 

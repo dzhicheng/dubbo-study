@@ -13,7 +13,7 @@ public class DubboTest {
      */
     @Test
     public void echoTest() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring/dubbo-Test.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:dubbo/dubbo-Test.xml");
 
         ctx.start();
         System.out.println("---------dubbo启动成功--------");
@@ -38,7 +38,7 @@ public class DubboTest {
      */
     @Test
     public void other() {
-        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:spring/dubbo-Test.xml");
+        ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext("classpath:dubbo/dubbo-Test.xml");
 
         ctx.start();
         System.out.println("---------dubbo启动成功--------");

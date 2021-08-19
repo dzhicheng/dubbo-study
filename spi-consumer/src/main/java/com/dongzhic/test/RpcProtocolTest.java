@@ -14,12 +14,12 @@ import java.io.IOException;
 import java.lang.reflect.Proxy;
 
 public class RpcProtocolTest {
+
     URL url = URL.valueOf("rmi://127.0.0.1:9001/"+ DemoService.class.getName());
 
     /**
      * Protocol连接服务端invoker
      * 将目标服务调用信息，包装成为invoker实体，暴露到网络上
-     *
      * 当网络信息到达，将触发invoker的invoke方法，最终将调用转到目标service上
      */
     @Test

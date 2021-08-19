@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+        http://dubbo.apache.org/schema/dubbo
+        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+
+    <!-- 1.应用信息：服务提供方应用名称, 方便用于依赖跟踪 -->
+    <dubbo:application name="service-provider"  />
+
+    <!--2.注册中心相关信息：使用本地zookeeper作为注册中心 -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" timeout="10000" />
+
+    <!--3.服务方缺省配置：全局配置-->
+    <dubbo:provider timeout="3000" />
+
+    <!--
+        4.配置提供服务的协议信息，协议由提供方指定，消费方被动接受
+            用dubbo协议在20880端口暴露服务
+     -->
+    <dubbo:protocol name="dubbo" port="20880" />
+
+    <!-- 5.声明需要暴露的服务接口 -->
+    <dubbo:service interface="com.dongzhic.service.HelloService" ref="helloService" />
+    <dubbo:service interface="com.dongzhic.service.PayService" ref="payService" />
+    <dubbo:service interface="com.dongzhic.service.UserService" ref="userService" />
+    <dubbo:service interface="com.dongzhic.service.ErrorService" ref="errorService" />
+
+    <!-- 让spring托管和实例化，和本地bean一样实现服务 -->
+    <bean id="helloService" class="com.dongzhic.service.impl.HelloServiceImpl" />
+    <bean id="payService" class="com.dongzhic.service.impl.PayServiceImpl" />
+    <bean id="userService" class="com.dongzhic.service.impl.UserServiceImpl" />
+    <bean id="errorService" class="com.dongzhic.service.impl.ErrorServiceImpl" />
+
+</beans>

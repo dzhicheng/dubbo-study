@@ -7,7 +7,7 @@
         http://dubbo.apache.org/schema/dubbo
         http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
 
-    <!-- 消费方应用名，用于计算依赖关系，不是匹配条件，不要与提供方一样 -->
+    <!-- 1.应用信息：服务消费方应用名称, 方便用于依赖跟踪，用于计算依赖关系，不是匹配条件，不要与提供方一样  -->
     <dubbo:application name="service-consumer">
         <!--qos是dubbo在线运维命令-->
         <!--是否启动Qos，默认是true-->
@@ -18,9 +18,11 @@
         <dubbo:parameter key="qos.accept.foreign.ip" value="false" />
     </dubbo:application>
 
-    <!--不需要配置协议，消费方是被动接受协议-->
+    <!--2.注册中心相关信息：使用本地zookeeper作为注册中心 -->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
 
     <!--
+       3.消费方缺省配置
         check   启动检查，true：检测到某接口没有提供者时，抛异常，阻止系统启动，可能会出现循环依赖导致报错
         cluster 集群容错配置
         loadbalance  负载均衡配置
@@ -30,13 +32,14 @@
     -->
     <dubbo:consumer check="false" cluster="failover" retries="2" forks="2" loadbalance="random" />
 
-    <!-- 使用zookeeper广播注册中心暴露发现服务地址 -->
-    <dubbo:registry address="zookeeper://127.0.0.1:2181" />
+    <!--4.不需要配置协议，消费方是被动接受协议-->
 
-    <!-- 生成远程服务代理，可以和本地bean一样使用demoService
-         cache  声明式缓存
-            lru ：基于最近最少使用原则删除多余缓存
-            threadlocal ：当前线程缓存
+
+    <!--5.引用服务配置，用于创建一个远程服务代理
+          生成远程服务代理，可以和本地bean一样使用demoService
+            cache  声明式缓存
+                lru ：基于最近最少使用原则删除多余缓存
+                threadlocal ：当前线程缓存
     -->
     <dubbo:reference id="helloService" interface="com.dongzhic.service.HelloService" cache="lru" timeout="4000" />
 

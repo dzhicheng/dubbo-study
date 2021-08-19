@@ -1,7 +1,7 @@
 package com.dongzhic.util;
 
 import com.dongzhic.service.InfoService;
-import com.dongzhic.impl.InfoServiceImpl;
+import com.dongzhic.service.impl.InfoServiceImpl;
 
 import java.net.MalformedURLException;
 import java.rmi.AlreadyBoundException;

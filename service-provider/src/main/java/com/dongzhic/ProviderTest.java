@@ -4,8 +4,8 @@ import com.alibaba.fastjson.JSON;
 import com.dongzhic.entity.OrderEntry;
 import com.dongzhic.service.InfoService;
 import com.dongzhic.service.OrderService;
-import com.dongzhic.impl.InfoServiceImpl;
-import com.dongzhic.impl.OrderServiceImpl;
+import com.dongzhic.service.impl.InfoServiceImpl;
+import com.dongzhic.service.impl.OrderServiceImpl;
 import com.dongzhic.util.InvokeUtils;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -47,15 +47,15 @@ public class ProviderTest {
     @Test
     public void callApi () {
         AnnotationConfigApplicationContext ctx = new AnnotationConfigApplicationContext(ProviderConfiguration.class);
-        ctx.start();
         System.out.println("=======================spring启动成功=======================");
 
-        System.out.println("-------------方式一：通过application.getBean()调用---------------");
+        System.out.println("-------------方式一：通过application.getBean()获取bean直接调用方法---------------");
         OrderService orderService = (OrderService) ctx.getBean("orderService");
         OrderEntry entry = orderService.getDetail("1");
         System.out.println("测试orderService.getDetail调用功能，调用结果：" + JSON.toJSONString(entry));
 
-
+        System.out.println("-------------方式二：通过反射方式调用OrderService.getDetail()方法---------------");
+        // 通过反射调用方法：目标对象、对象方法、方法参数
         Map<String,String> info = new HashMap();
         info.put("target","orderService");
         info.put("methodName","getDetail");
@@ -72,7 +72,7 @@ public class ProviderTest {
     @Test
     public void startProviderOfXml () throws IOException {
 
-        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:dubbo-provider.xml");
+        ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("classpath:dubbo/dubbo-provider.xml");
         context.start();
 
         System.out.println("=======================dubbo容器通过xml方式启动=======================");

@@ -8,6 +8,7 @@ import org.junit.Test;
 import java.util.List;
 
 /**
+ * Activate使用
  * 某此情况下，同一个接口的多个实现需要同时发挥作用，比如filter链。此时需要按条件选择一批实现类来工作
  * Activate：可以被框架中自动激活加载扩展
  * 用户通过group和value配置激活条件
@@ -31,7 +32,8 @@ public class ActivateTest {
         ExtensionLoader<Filter> extensionLoader = ExtensionLoader.getExtensionLoader(Filter.class);
 
         URL url = URL.valueOf("test://localhost/test");
-        List<Filter> list = extensionLoader.getActivateExtension(url,"", "peter");//group
+        // group对应service实现类的@Activate(group = "james")里的group
+        List<Filter> list = extensionLoader.getActivateExtension(url,"", "peter");
         for (Filter filter : list){
             filter.invoke(null,null);
         }
@@ -46,6 +48,7 @@ public class ActivateTest {
         ExtensionLoader extensionLoader = ExtensionLoader.getExtensionLoader(Filter.class);
 
         URL url = URL.valueOf("test://localhost/dsafsdfsdfsd");
+        // oooooo要和@Activate(group = {"peter","james"},value = "oooooo")，value属性匹配
         url = url.addParameter("oooooo", "66666");
         List<Filter> list = extensionLoader.getActivateExtension(url,"","james");
         for (Filter filter:list){

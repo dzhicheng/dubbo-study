@@ -35,7 +35,7 @@ public class Provider {
 
     @Configuration
     @EnableDubbo(scanBasePackages = "com.dongzhic.service.impl")
-    @PropertySource("classpath:/dubbo-provider.properties")
+    @PropertySource("classpath:/dubbo/dubbo-provider.properties")
     static class ProviderConfiguration {
     }
 }

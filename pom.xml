@@ -17,6 +17,7 @@
         <module>spi-api</module>
         <module>spi-provider</module>
         <module>spi-consumer</module>
+        <module>service-ext</module>
     </modules>
 
     <properties>
